@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Produitapetit prix emergent</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Produitapetit prix emergent</h1>
+    <p class="tag">Gadgets high-tech à petits prix</p>
+    <nav>
+      <button id="open-cart">Panier (<span id="cart-count">0</span>)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="products" class="products-grid"></section>
+  </main>
+
+  <aside id="cart" class="cart-hidden">
+    <h2>Ton panier</h2>
+    <div id="cart-items"></div>
+    <div class="cart-summary">
+      <div>Total : <strong id="cart-total">0.00 €</strong></div>
+      <button id="checkout-btn">Passer la commande</button>
+      <button id="close-cart" class="ghost">Fermer</button>
+    </div>
+  </aside>
+
+  <div id="checkout-modal" class="modal-hidden">
+    <div class="modal-content">
+      <h3>Finaliser la commande</h3>
+      <form id="order-form">
+        <label>Nom complet<input name="entry.0" required></label>
+        <label>Email<input name="entry.1" type="email" required></label>
+        <label>Téléphone<input name="entry.2" required></label>
+        <label>Adresse (livraison)<textarea name="entry.3" required></textarea></label>
+        <label>Mode de paiement
+          <select name="entry.4">
+            <option value="PayPal">PayPal (lien envoyé)</option>
+            <option value="Paiement à la livraison">Paiement à la livraison</option>
+          </select>
+        </label>
+
+        <input type="hidden" name="entry.5" id="form-order-summary">
+        <div class="form-actions">
+          <button type="submit">Envoyer la commande</button>
+          <button id="cancel-order" type="button" class="ghost">Annuler</button>
+        </div>
+      </form>
+      <small>Après envoi : tu verras la commande dans Google Sheets lié au formulaire.</small>
+    </div>
+  </div>
+
+  <footer>
+    <p>© Produitapetit prix emergent — Contact : support@tonsite.com</p>
+  </footer>
+
+  <script src="shop.js"></script>
+</body>
+</html>
